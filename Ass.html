@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Salaries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .employee {
+            margin-bottom: 20px;
+        }
+        .separator {
+            border-top: 1px solid black; /* Default separator line */
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<?php
+$employees = [
+    [
+        'name' => 'Alice',
+        'monthly_salaries' => [3000, 3100, 2900, 3000, 3100, 3200, 3000, 3100, 2900, 3000, 3100, 3200]
+    ],
+    [
+        'name' => 'Bob',
+        'monthly_salaries' => [2500, 2600, 2700, 2500, 2600, 2700, 2500, 2600, 2700, 2500, 2600, 2700]
+    ],
+    [
+        'name' => 'Charlie',
+        'monthly_salaries' => [4000, 4100, 4200, 4300, 4400, 4500, 4000, 4100, 4200, 4300, 4400, 4500]
+    ]
+];
+
+foreach ($employees as $employee) {
+    echo "<div class='employee'>";
+    echo "<strong>Employee Name: </strong>" . htmlspecialchars($employee['name']) . "<br>";
+    echo "<strong>Monthly Salaries: </strong>" . htmlspecialchars(implode(", ", $employee['monthly_salaries'])) . "<br>";
+    echo "<div class='separator'></div>";
+    echo "</div>";
+}
+?>
+
+</body>
+</html>
